@@ -20,6 +20,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -64,7 +65,7 @@ public class CalendarDayDecoratorActivity extends AppCompatActivity {
         calendarView.setFirstDayOfWeek(Calendar.MONDAY);
 
         //Show/hide overflow days of a month
-        calendarView.setShowOverflowDate(false);
+        calendarView.setShowOverflowDate(true);
 
         //call refreshCalendar to update calendar the view
         calendarView.refreshCalendar(currentCalendar);
@@ -109,8 +110,13 @@ public class CalendarDayDecoratorActivity extends AppCompatActivity {
         @Override
         public void decorate(DayView dayView) {
             if (CalendarUtils.isPastDay(dayView.getDate())) {
-                int color = Color.parseColor("#a9afb9");
-                dayView.setBackgroundColor(color);
+                //int color = Color.parseColor("#a9afb9");
+                //dayView.setBackgroundColor(color);
+                String t = dayView.getText().toString();
+                t = t + "<br/>&#8226;&#95;";
+                dayView.setTextSize(35);
+                dayView.setTextColor(getResources().getColor(R.color.colorPrimary));
+                dayView.setText(Html.fromHtml(t));
             }
         }
     }
