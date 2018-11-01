@@ -30,32 +30,8 @@ Currently it supports the following features:
 
 ```java
 dependencies {
-    compile 'com.github.npanigrahy:Custom-Calendar-View:v1.0'
+    compile 'com.github.clemoseitano:Custom-Calendar-View:v1.1'
 }
-```
-### Maven
-```xml
-<repository>
-     <id>jitpack.io</id>
-     <url>https://jitpack.io</url>
-</repository>
-```
-**Step 2** Add the dependency in the form
-```xml
-<dependency>
-     <groupId>com.github.npanigrahy</groupId>
-     <artifactId>Custom-Calendar-View</artifactId>
-     <version>v1.0</version>
-</dependency>
-```
-### Sbt
-**Step-1** Add it in your build.sbt at the end of resolvers:
-```java
-resolvers += "jitpack" at "https://jitpack.io"
-```
-**Step-2** Add the dependency in the form
-```java
-libraryDependencies += "com.github.npanigrahy" % "Custom-Calendar-View" % "v1.0"
 ```
 
 ## Using CustomCalendarView Library
