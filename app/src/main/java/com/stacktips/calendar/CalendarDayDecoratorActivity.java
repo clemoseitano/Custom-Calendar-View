@@ -69,7 +69,6 @@ public class CalendarDayDecoratorActivity extends AppCompatActivity {
 
         //call refreshCalendar to update calendar the view
         calendarView.refreshCalendar(currentCalendar);
-
         //Handling custom calendar events
         calendarView.setCalendarListener(new CalendarListener() {
             @Override
@@ -109,14 +108,17 @@ public class CalendarDayDecoratorActivity extends AppCompatActivity {
     private class DisabledColorDecorator implements DayDecorator {
         @Override
         public void decorate(DayView dayView) {
-            if (CalendarUtils.isPastDay(dayView.getDate())) {
+            Calendar c = Calendar.getInstance();
+            dayView.setTextSize(24);
+            c.setTime(dayView.getDate());
+            if ( CalendarUtils.isToday(c)) {
+                dayView.setAsSpecialDay();
                 //int color = Color.parseColor("#a9afb9");
                 //dayView.setBackgroundColor(color);
                 String t = dayView.getText().toString();
-                t = t + "<br/>&#8226;&#95;";
-                dayView.setTextSize(35);
+               // t = t + "<br/>&#8226;&#95;";
                 dayView.setTextColor(getResources().getColor(R.color.colorPrimary));
-                dayView.setText(Html.fromHtml(t));
+               // dayView.setText(Html.fromHtml(t));
             }
         }
     }

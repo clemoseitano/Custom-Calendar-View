@@ -393,7 +393,7 @@ public class CustomCalendarView extends LinearLayout {
             ViewGroup dayOfMonthContainer = (ViewGroup) view;
             String tagId = (String) dayOfMonthContainer.getTag();
             tagId = tagId.substring(DAY_OF_MONTH_CONTAINER.length(), tagId.length());
-            final TextView dayOfMonthText = (TextView) view.findViewWithTag(DAY_OF_MONTH_TEXT + tagId);
+            final TextView dayOfMonthText = ((LinearLayout) view.findViewWithTag(DAY_OF_MONTH_TEXT + tagId)).findViewById(R.id.day_text);
 
             // Fire event
             final Calendar calendar = Calendar.getInstance();
