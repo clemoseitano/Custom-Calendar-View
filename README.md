@@ -30,7 +30,7 @@ Currently it supports the following features:
 
 ```java
 dependencies {
-    compile 'com.github.clemoseitano:Custom-Calendar-View:v1.1'
+     implementation 'com.github.clemoseitano:Custom-Calendar-View:b00cbee1d4'
 }
 ```
 
